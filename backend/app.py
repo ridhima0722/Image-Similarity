@@ -96,15 +96,6 @@ else:
                 img = img.convert('RGB')
             img_array = img_to_array(img)
             img_array = np.expand_dims(img_array, axis=0)
-        
-            
-            #today
-            # denoised_image = dncnn_model.predict(img_array)
-            # denoised_image = denoise_wavelet(img_array)
-            # denoised_image = denoise_tv_chambolle(img_array, weight=0.1)
-            # denoised_image = cv2.medianBlur(img_array, 5)
-            # img_array = preprocess_input(denoised_image)
-
             img_array = preprocess_input(img_array)
             # feature = vgg16.predict(img_array)[0]
             # feature = vgg19.predict(img_array)[0]
@@ -281,17 +272,7 @@ def extract_features_from_memory(image_content):
     if img.mode == 'RGBA':
         img = img.convert('RGB')
     img_array = img_to_array(img)
-    # img_array = img_array.astype(np.uint8)
-    # dst = cv2.fastNlMeansDenoisingColored(img_array,None,10,10,7,21)
-    # img_array = np.expand_dims(dst, axis=0)
     img_array = np.expand_dims(img_array, axis=0)
-
-    # denoised_image = dncnn_model.predict(img_array)
-    # denoised_image = denoise_wavelet(img_array)
-    # denoised_image = denoise_tv_chambolle(img_array, weight=0.1)
-    # denoised_image = cv2.medianBlur(img_array, 5)
-    # img_array = preprocess_input(denoised_image)
-
     img_array = preprocess_input(img_array)
     # features = vgg19.predict(img_array)
     # features = vgg16.predict(img_array)
